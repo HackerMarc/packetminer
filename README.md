@@ -28,12 +28,14 @@ cd packetminer
 ```bash
 chmod +x install.sh
 ./install.sh
+source ./venv/bin/activate
 ```
 
 This will:
 - Install **Wireshark CLI tools** (if needed)  
 - Set up a **Python virtual environment**  
-- Install required **Python dependencies**  
+- Install required **Python dependencies** 
+- Activate the virtual environment 
 
 ---
 
@@ -43,7 +45,10 @@ This will:
 ```bash
 packetminer
 ```
-
+or
+```bash
+python packetminer/cli.py
+```
 You'll see an interactive menu:
 
 ```
