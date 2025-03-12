@@ -4,8 +4,8 @@ from banner import display_banner
 from file_manager import list_pcap_files, create_temp_folder
 from chunker import detect_large_pcap, chunk_pcap, explain_chunking
 from extractor import process_pcap
-from sorter import merge_sorted_data
-from output import save_output
+from sorter import merge_and_sort
+from output import generate_output
 
 def main_menu():
     """Displays the interactive menu for user selection."""
@@ -99,8 +99,8 @@ def process_pcap_folder(pcap_files):
         handle_large_pcap(file)
     
     print("\n[+] Merging sorted data from all files...")
-    merged_file = merge_sorted_data(temp_folder)
-    save_output(merged_file)
+    merged_file = merge_and_sort(temp_folder)
+    generate_output(merged_file)
 
 def view_temp_files():
     """Displays contents of the temporary folder."""
